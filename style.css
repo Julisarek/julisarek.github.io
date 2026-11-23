@@ -1,0 +1,227 @@
+body{
+    color: rgb(0, 0, 0);
+    font-family: "Courier New", Courier, monospace;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px;
+    
+}
+
+nav {
+  position: sticky;
+  
+  
+}
+
+a { text-decoration: none; }
+
+
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+p {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-family: "Syne Tactile", system-ui;
+    color: blue;
+    font-size: 35px;
+    
+
+}
+
+h2 {
+    font-family:'Courier New', Courier, monospace;
+    color: blue;
+    font-size: 25px;
+    
+
+}
+
+
+
+h4 {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    font-family:'Courier New', Courier, monospace
+
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 3px dotted rgb(0, 34, 255);
+}
+
+
+.nav {
+    position: sticky;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-items: stretch;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: 10px;
+    font-weight: 300;
+}
+
+
+.grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+    margin: auto;
+}
+
+#Portfolio {
+  position: sticky;
+  top: 0px;
+}
+
+footer {
+  text-align: center;
+  padding: 5px;
+  color: black;
+}
+
+.image-container{
+  display: grid;
+  text-decoration: none;
+}
+
+
+.image-container img{
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  transition: transform 0.6s ease;
+  
+}
+
+
+.image-container .image-text{
+   grid-column: 1 / -1;
+   grid-row: 1 / -1;
+   display: grid;
+   align-items: left;
+   justify-items: left;
+   opacity: 0;
+   background-color: rgb(0, 8, 255);
+   background :rgb(0, 0, 255);
+   background: linear-gradient(to bottom, rgba(0, 0, 255, 0.724), rgba(0, 0, 255, 0.198));
+   transition: opacity 0.5s ease;
+   margin: 0;
+}
+
+
+.image-container:hover .image-text{
+opacity: 1;
+}
+
+
+.overlay{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(0, 0, 255);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 1;
+   transition: opacity 0.6s ease;
+}
+
+
+.image-text{
+   color: rgb(247, 243, 255);
+   font-family: "Syne Tactile", system-ui;
+   font-size: auto;
+   text-align: center;
+   padding: 5px;
+   text-decoration: none ;
+   
+   
+}
+
+
+.image-container:hover .overlay{
+   opacity: 1;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Mise en page des pages de projet */
+.contenu-projet {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.texte-projet {
+    position: sticky;
+    top: 8px;
+    align-self: start;
+    background: white;
+    z-index: 2;
+}
+
+.contenu-projet main {
+    grid-column: 2;
+    border-left: 3px dotted rgb(0, 34, 255);
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 599px) {
+    .contenu-projet { display: block; }
+    .contenu-projet .texte-projet { top: 0; z-index: 10; }
+    .contenu-projet main { border: 0; padding: 0; }
+}
+
+@media screen and (min-width: 600px) {
+    .grid { grid-template-columns: repeat(2,1fr); }
+    .texte-projet { top: 140px; }
+}
+
+@media screen and (min-width: 900px) {
+    .grid { grid-template-columns: repeat(3,1fr); }
+}
+
+.contenu-projet .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    padding-top: 105px;
+    padding-bottom: 400px;
+}
+
+.footer p{
+    text-align: center;
+    font-size: 5px;
+    font-weight: 300;
+    
+}
+
+.spacer {
+    height: 100px; /* ajuster la hauteur comme tu veux */
+    width: 100%;
+}
+
+
