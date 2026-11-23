@@ -148,20 +148,21 @@ footer {
 
 .image-text {
   color: rgb(85, 0, 255);
-  font-family: "Syne Tactile", system-ui;
+  font-family: "courier new", Courier, monospace;
+  font-weight: 400;
   text-align: center;
   padding: 5px;
   text-decoration: none;
   opacity:0;
-    position: absolute;
-    bottom:10px;          /* position en bas de l’image */
-    left:50%;
-    width: 100%;
-    transform: translateX(-50%);
-    text-align: center;
-    background: rgb(255, 255, 255); /* bulle noire transparente */
-    color: rgb(0, 0, 0);
-    padding: 8px 5px;
+  position: absolute;
+  bottom:10px;          /* position en bas de l’image */
+  left:50%;
+  width: 100%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgb(255, 255, 255); /* bulle noire transparente */
+  color: rgb(0, 0, 0);
+  padding: 8px 5px;
     
 }
 
