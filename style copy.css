@@ -1,0 +1,178 @@
+body{
+    color: blue;
+    font-family: "Courier New", Courier, monospace;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px;
+    text-decoration: none ;
+}
+
+/* @media(max-width: 600px){
+    body{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+} */
+
+nav {
+  
+  text-decoration: none ;
+  
+}
+
+
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+p {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-family: "Syne Tactile", system-ui;
+    color: blue;
+    font-size: 35px;
+
+}
+
+h4 {
+    font-family: 'Courier   New', Courier, monospace;
+    color: blue;
+
+}
+
+
+
+header{
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: baseline;
+    text-decoration: none;
+    border-bottom: 3px dotted rgb(0, 34, 255);
+}
+
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1px;
+    margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+    .grid {
+    grid-template-columns: repeat (2,1fr);
+    }
+}
+@media screen and (min-width: 900px) {
+    .grid {
+    grid-template-columns: repeat (3,1fr);
+    }
+}
+
+#Portfolio {
+  position: sticky;
+  top: 0px;
+}
+
+footer {
+  text-align: center;
+  padding: 5px;
+  color: black;
+}
+
+.image-container {
+  display: grid;
+  text-decoration: none;
+  position: relative; /* required so .overlay is positioned to the image */
+}
+
+.image-container img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: brightness(1) contrast(1.15);
+}
+
+.image-container:hover img {
+  filter: brightness(1); /* slight darken deepens the blue, keeps detail */
+}
+
+.image-container .image-text {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  display: grid;
+  place-self: center;
+  width: fit-content;
+  height: fit-content;
+  opacity: 0;
+  background: white;
+  color: #111;
+  transition: none;
+  margin: 0;
+  padding: 8px 14px;
+}
+
+.image-container:hover .image-text {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 255);
+  mix-blend-mode: color; 
+  filter: contrast(10); /* keeps luminosity, tints with pure blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: none;
+}
+
+.image-container:hover .overlay {
+  opacity: 0;
+  
+}
+
+.image-text {
+  color: rgb(85, 0, 255);
+  font-family: "Syne Tactile", system-ui;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  opacity:0;
+    position: absolute;
+    bottom:10px;          /* position en bas de l’image */
+    left:50%;
+    width: 100%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgb(255, 255, 255); /* bulle noire transparente */
+    color: rgb(0, 0, 0);
+    padding: 8px 5px;
+    
+}
+
+.footer {
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+.footer p{
+    text-align: center;
+    font-size: 5px;
+    font-weight: 300;
+    
+}
