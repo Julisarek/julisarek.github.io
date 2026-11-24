@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: "Syne";
+  font-family: "Syne Tactile";
   src: url("fonts/SyneTactile-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
@@ -137,7 +137,7 @@ p {
 }
 
 h1 {
-    font-family: "Syne-Tactile", system-ui, sans-serif;
+    font-family: "Syne Tactile", system-ui, sans-serif;
     font-style: normal;
     color: blue;
     font-size: 36px;
@@ -147,7 +147,7 @@ h1 {
 }
 
 h2 {
-    font-family:"Syne-Tactile", system-ui, sans-serif;
+    font-family:"Syne Tactile", system-ui, sans-serif;
     font-style: normal;
     color: blue;
     font-size: 30px;
@@ -197,6 +197,10 @@ header{
     width: 100%;
     min-width: 0;
     margin: 0;
+}
+
+.portfolio-grid {
+    grid-template-columns: 1fr;
 }
 
 #Portfolio {
@@ -335,6 +339,18 @@ footer {
 .contenu-projet .grid > img {
     min-width: 0;
     width: 100%;
+}
+
+@media (min-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .footer {
