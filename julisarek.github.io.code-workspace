@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "julisarek.github.io",
+			"path": "."
+		},
+		{
+			"name": "Minia",
+			"path": "../../../Downloads/Prtolfop/Minia"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502,
+		"liveServer.settings.multiRootWorkspaceName": "julisarek.github.io"
+	}
+}

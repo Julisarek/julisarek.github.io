@@ -1,16 +1,105 @@
+@font-face {
+  font-family: "National Park";
+  src: url("ressources/NationalPark-Regular%20(1).woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "National Park";
+  src: url("ressources/NationalPark-Medium%20(1).woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "National Park";
+  src: url("ressources/NationalPark-SemiBold%20(1).woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+html {
+    overflow-x: clip;
+}
+
 body{
     color: rgb(0, 0, 0);
-    font-family: "Courier New", Courier, monospace;
+    font-family: "National Park", sans-serif;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 8px;
+    padding: 20px;
     
 }
 
 nav {
   position: sticky;
-  
-  
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  width: min(50vw, 70px);
+  height: 2em;
+  min-width: 0;
+  max-width: min(50vw, 70px);
+  box-sizing: border-box;
+}
+
+.apropos-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.apropos-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.apropos-text {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 85px);
+  cursor: pointer;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  transition: left 0.5s ease;
+}
+
+.apropos-content {
+  position: absolute;
+  top: 50%;
+  left: 70px;
+  right: 0;
+  opacity: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: right;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.apropos-toggle:checked ~ .apropos-text {
+  left: -24px;
+}
+
+.apropos-toggle:checked ~ .apropos-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.apropos-toggle:focus-visible + .apropos-text {
+  outline: 2px solid blue;
+  outline-offset: 2px;
 }
 
 a { text-decoration: none; }
@@ -25,21 +114,23 @@ img{
 
 p {
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "National Park", sans-serif;
+    font-size: 15px;
 }
 
 h1 {
     font-family: "Syne Tactile", system-ui;
     color: blue;
-    font-size: 35px;
-    
+    font-size: 36px;
+    line-height: 1.8;
+    margin: 0;
 
 }
 
 h2 {
-    font-family:'Courier New', Courier, monospace;
+    font-family:"Syne Tactile", system-ui;
     color: blue;
-    font-size: 25px;
+    font-size: 30px;
     
 
 }
@@ -48,8 +139,8 @@ h2 {
 
 h4 {
     color: rgb(0, 0, 0);
-    font-size: 10px;
-    font-family:'Courier New', Courier, monospace
+    font-size: 20px;
+    font-family:"National Park", sans-serif
 
 }
 
@@ -62,7 +153,7 @@ header{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     border-bottom: 3px dotted rgb(0, 34, 255);
 }
 
@@ -100,6 +191,7 @@ footer {
 .image-container{
   display: grid;
   text-decoration: none;
+    position: relative;
 }
 
 
@@ -107,60 +199,76 @@ footer {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   transition: transform 0.6s ease;
-  
+   filter: brightness(1) contrast(1.15);
+}
+
+.image-container:hover img {
+  filter: brightness(1); /* slight darken deepens the blue, keeps detail */
+
 }
 
 
 .image-container .image-text{
-   grid-column: 1 / -1;
-   grid-row: 1 / -1;
-   display: grid;
-   align-items: left;
-   justify-items: left;
-   opacity: 0;
-   background-color: rgb(0, 8, 255);
-   background :rgb(0, 0, 255);
-   background: linear-gradient(to bottom, rgba(0, 0, 255, 0.724), rgba(0, 0, 255, 0.198));
-   transition: opacity 0.5s ease;
-   margin: 0;
+  grid-column: 1 / -1;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  display: grid;
+  position: relative;
+  z-index: 1;
+  justify-self: stretch;
+  align-self: end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+  opacity: 0;
+  background: white;
+  color: #111;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  margin: 0 0 10px;
+  padding: 10px 14px;
 }
 
 
 .image-container:hover .image-text{
-opacity: 1;
+ opacity: 1;
 }
 
 
 .overlay{
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgb(0, 0, 255);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   opacity: 1;
-   transition: opacity 0.6s ease;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 255);
+  mix-blend-mode: color; 
+  filter: contrast(10); /* keeps luminosity, tints with pure blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+
 }
 
 
 .image-text{
    color: rgb(247, 243, 255);
-   font-family: "Syne Tactile", system-ui;
+   font-family: "National Park", sans-serif;
    font-size: auto;
    text-align: center;
    padding: 5px;
    text-decoration: none ;
+   transition: opacity 0.6s ease;
    
    
 }
 
 
 .image-container:hover .overlay{
-   opacity: 1;
-   background-color: rgba(0, 0, 0, 0.5);
+   opacity: 0;
 }
 
 /* Mise en page des pages de projet */
@@ -172,7 +280,7 @@ opacity: 1;
 
 .texte-projet {
     position: sticky;
-    top: 8px;
+    top: 50px;
     align-self: start;
     background: white;
     z-index: 2;
@@ -187,13 +295,12 @@ opacity: 1;
 
 @media (max-width: 599px) {
     .contenu-projet { display: block; }
-    .contenu-projet .texte-projet { top: 0; z-index: 10; }
+    .contenu-projet .texte-projet { position: static; }
     .contenu-projet main { border: 0; padding: 0; }
 }
 
 @media screen and (min-width: 600px) {
     .grid { grid-template-columns: repeat(2,1fr); }
-    .texte-projet { top: 140px; }
 }
 
 @media screen and (min-width: 900px) {
@@ -209,7 +316,7 @@ opacity: 1;
 
 .footer {
     padding-top: 105px;
-    padding-bottom: 400px;
+    padding-bottom: 200px;
 }
 
 .footer p{
@@ -222,6 +329,52 @@ opacity: 1;
 .spacer {
     height: 100px; /* ajuster la hauteur comme tu veux */
     width: 100%;
+}
+
+.next-project {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 50%;
+    background: blue;
+    color: white;
+    font: inherit;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.previous-project {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 50%;
+    background: blue;
+    color: white;
+    font: inherit;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.previous-project:hover {
+    background: rgb(0, 34, 200);
+}
+
+.next-project:hover {
+    background: rgb(0, 34, 200);
 }
 
 

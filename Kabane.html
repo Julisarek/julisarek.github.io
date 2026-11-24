@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrume</title>
+    <title>Kabane Café</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-     <h1>Kabane Café</h1>
-    </header>
 
-    <h4>Identité Visuelle</h4>
-    <p>Proposition de rebranding d’un café proposant des expériences de thé et café authentique.utilisation d'une l'avis pour 
-Jeux de texture créé par le lavis produisant la fumée qui prend la forme d'un arbre à café.
-</p>
+    <header>
+    
+     <h1>
+        <a href="index.html">Julia Pisarek</a>
+    </h1>
+    <nav>
+        
+            
+            <div class="apropos-container">
+                <input class="apropos-toggle" type="checkbox" id="apropos-toggle">
+                <a class="apropos-text" href="apropos.html">À propos</a>
+            </div>
+        
+        </nav>
+    
+    </header>
+    <div class="contenu-projet">
+    <div class="texte-projet">
+    <h2>Kabane Café</h2>
+    <h4>Identité visuelle</h4>
+    <p><i>Proposition de rebranding d’un café proposant des expériences de thé et café authentique.</i>
+        <br>
+        <br>
+Jeux de texture créés par le l'avis produisant la fumée qui prend la forme d'un arbre à café.</p>
+    </div>
     <main>
     <div class="grid">
-        <img src="image/AgrumeR1.png" alt="riso" width="200" height="148">
-  
-        <img src="image/AgrumeR2.png" alt="edition" width="200" height="148">
- 
-        <img src="image/AgrumeR3.png" alt="riso" width="200" height="148">
-  
 
+        <img src="image/agrume/plan-de-travail-1.jpg" alt="riso" width="200" height="148">
+
+        <img src="image/agrume/tablier-motif-1.jpg" alt="riso" width="200" height="148">
+  
         
-    </a>
-    
+ 
+        <img src="image/agrume/cartes-de-visite-vue-dessus.jpg" alt="riso" width="200" height="148">
+        <img src="image/agrume/kabane-cafe.jpg" alt="riso" width="200" height="148">
+  
     </div>
-
     </main>
+    </nav>
+    </div>
+    <button class="previous-project" type="button" aria-label="Projet précédent : Agrume" onclick="goToNextProject('agrume.html')">←</button>
+    <button class="next-project" type="button" aria-label="Projet suivant : Kabane Café" onclick="goToNextProject('kabane.html')">→</button>
+    <script>
+        function goToNextProject(page) {
+            window.location.href = page;
+        }
+    </script>
    
     
 </body>
