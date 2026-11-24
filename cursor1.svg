@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375.2 375.2">
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g>
+      <rect x="184.47" width="6.26" height="156.52"/>
+      <rect x="184.47" y="218.68" width="6.26" height="156.52"/>
+    </g>
+    <g>
+      <rect x="293.81" y="109.34" width="6.26" height="156.52" transform="translate(484.55 -109.34) rotate(90)"/>
+      <rect x="75.13" y="109.34" width="6.26" height="156.52" transform="translate(265.86 109.34) rotate(90)"/>
+    </g>
+    <circle cx="187.6" cy="187.6" r="10.62"/>
+  </g>
+</svg>

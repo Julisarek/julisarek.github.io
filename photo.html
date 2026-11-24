@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portrait</title>
+    <link rel="icon" type="image/x-icon" href="image/image/logo.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    
+     <h1>
+        <a href="index.html">Julia Pisarek</a>
+    </h1>
+  <nav>
+        
+            
+            
+                <a class="apropos-text" href="apropos.html">À propos</a>
+        
+        </nav>
+    </header>
+    <div class="contenu-projet">
+    <div class="texte-projet">
+    <h2>Portrait</h2>
+    <h4>Photographie</h4>
+    <p> En s'inspirant du travail du photographe Platon, que ce soit pour les poses et la technique photographique, pour travailler en équipe sur un photoshoot.</p>
+    </div>
+    <main>
+    <div class="grid">
+
+        <img src="image/Photo/lilou.jpg" alt="Portrait de Lilou" width="200" height="148">
+
+        <img src="image/Photo/mariapaz.jpg" alt="Portrait de Maria Paz" width="200" height="148">
+  
+        
+ 
+        <img src="image/Photo/thea.jpg" alt="Portrait de Théa" width="200" height="148">
+        
+  
+    </div>
+    </main>
+    </nav>
+    </div>
+    <button class="previous-project" type="button" aria-label="Projet précédent : Restitution" onclick="goToNextProject('restitution.html')">&#8592;</button>
+    <button class="next-project" type="button" aria-label="Projet suivant : Semaine du Goût" onclick="goToNextProject('semainedugout.html')">&#8594;</button>
+    <script>
+        function goToNextProject(page) {
+            window.location.href = page;
+        }
+    </script>
+   
+    
+</body>
+</html>

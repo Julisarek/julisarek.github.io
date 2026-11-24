@@ -1,9 +1,19 @@
+@font-face {
+    font-family: "Syne Local";
+    src: url("typo/syne.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 body{
     color: blue;
     font-family: "Courier New", Courier, monospace;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 8px;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: clamp(12px, 2vw, 24px);
     text-decoration: none ;
 }
 
@@ -21,10 +31,19 @@ nav {
   
 }
 
+body, body * {
+    cursor: url("cursor.svg") 4 3, auto;
+}
+
+a, button, label, input, select, textarea, .apropos-text, .next-project, .previous-project {
+    cursor: url("cursor.svg") 4 3, pointer;
+}
+
 
 img{
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -35,7 +54,7 @@ p {
 }
 
 h1 {
-    font-family: "Syne Tactile", system-ui;
+    font-family: "Syne Local", system-ui, sans-serif;
     color: blue;
     font-size: 35px;
 
@@ -62,20 +81,11 @@ header{
 
 .grid{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:1px;
-    margin: auto;
-}
-
-@media screen and (min-width: 600px) {
-    .grid {
-    grid-template-columns: repeat (2,1fr);
-    }
-}
-@media screen and (min-width: 900px) {
-    .grid {
-    grid-template-columns: repeat (3,1fr);
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(8px, 1.2vw, 16px);
+    width: 100%;
+    min-width: 0;
+    margin: 0;
 }
 
 #Portfolio {

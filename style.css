@@ -1,6 +1,6 @@
 @font-face {
   font-family: "National Park";
-  src: url("ressources/NationalPark-Regular%20(1).woff2") format("woff2");
+  src: url("ressources/nationalparkregular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "National Park";
-  src: url("ressources/NationalPark-Medium%20(1).woff2") format("woff2");
+  src: url("ressources/nationalparkmedium.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -16,9 +16,17 @@
 
 @font-face {
   font-family: "National Park";
-  src: url("ressources/NationalPark-SemiBold%20(1).woff2") format("woff2");
+  src: url("ressources/nationalparksemibold.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne Local";
+  src: url("typo/syne.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -29,9 +37,11 @@ html {
 body{
     color: rgb(0, 0, 0);
     font-family: "National Park", sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: clamp(12px, 2vw, 24px);
     
 }
 
@@ -108,6 +118,7 @@ a { text-decoration: none; }
 img{
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -119,7 +130,8 @@ p {
 }
 
 h1 {
-    font-family: "Syne Tactile", system-ui;
+    font-family: "Syne Local", system-ui, sans-serif;
+    font-style: normal;
     color: blue;
     font-size: 36px;
     line-height: 1.8;
@@ -128,7 +140,8 @@ h1 {
 }
 
 h2 {
-    font-family:"Syne Tactile", system-ui;
+    font-family:"Syne Local", system-ui, sans-serif;
+    font-style: normal;
     color: blue;
     font-size: 30px;
     
@@ -172,9 +185,11 @@ header{
 
 .grid{
     display:grid;
-    grid-template-columns: 1fr;
-    gap:5px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(8px, 1.2vw, 16px);
+    width: 100%;
+    min-width: 0;
+    margin: 0;
 }
 
 #Portfolio {
@@ -190,6 +205,7 @@ footer {
 
 .image-container{
   display: grid;
+  min-width: 0;
   text-decoration: none;
     position: relative;
 }
@@ -274,8 +290,8 @@ footer {
 /* Mise en page des pages de projet */
 .contenu-projet {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: clamp(12px, 2vw, 24px);
 }
 
 .texte-projet {
@@ -288,30 +304,28 @@ footer {
 
 .contenu-projet main {
     grid-column: 2;
+    min-width: 0;
     border-left: 3px dotted rgb(0, 34, 255);
     margin: 0;
     padding: 0;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 699px) {
     .contenu-projet { display: block; }
     .contenu-projet .texte-projet { position: static; }
     .contenu-projet main { border: 0; padding: 0; }
 }
 
-@media screen and (min-width: 600px) {
-    .grid { grid-template-columns: repeat(2,1fr); }
-}
-
-@media screen and (min-width: 900px) {
-    .grid { grid-template-columns: repeat(3,1fr); }
-}
-
 .contenu-projet .grid {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(8px, 1.2vw, 16px);
+    width: 100%;
     margin: 0;
     padding: 0;
+}
+
+.contenu-projet .grid > img {
+    min-width: 0;
 }
 
 .footer {
@@ -375,6 +389,14 @@ footer {
 
 .next-project:hover {
     background: rgb(0, 34, 200);
+}
+
+body, body * {
+    cursor: url("cursor2.svg") 4 3, auto;
+}
+
+a, button, label, input, select, textarea, .apropos-text, .next-project, .previous-project {
+    cursor: url("cursor2.svg") 4 3, pointer;
 }
 
 
