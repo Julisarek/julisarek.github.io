@@ -1,6 +1,6 @@
 @font-face {
   font-family: "National Park";
-  src: url("ressources/nationalparkregular.woff2") format("woff2");
+  src: url("fonts/nationalparkregular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "National Park";
-  src: url("ressources/nationalparkmedium.woff2") format("woff2");
+  src: url("fonts/nationalparkmedium.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -16,15 +16,15 @@
 
 @font-face {
   font-family: "National Park";
-  src: url("ressources/nationalparksemibold.woff2") format("woff2");
+  src: url("fonts/nationalparksemibold.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Syne Local";
-  src: url("typo/syne.woff2") format("woff2");
+  font-family: "Syne";
+  src: url("fonts/Syne-Regular.woff2?v=2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -43,6 +43,13 @@ body{
     margin: 0;
     padding: clamp(12px, 2vw, 24px);
     
+}
+
+body.project-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
 }
 
 nav {
@@ -130,7 +137,7 @@ p {
 }
 
 h1 {
-    font-family: "Syne Local", system-ui, sans-serif;
+    font-family: "Syne", system-ui, sans-serif;
     font-style: normal;
     color: blue;
     font-size: 36px;
@@ -140,7 +147,7 @@ h1 {
 }
 
 h2 {
-    font-family:"Syne Local", system-ui, sans-serif;
+    font-family:"Syne", system-ui, sans-serif;
     font-style: normal;
     color: blue;
     font-size: 30px;
@@ -290,6 +297,7 @@ footer {
 /* Mise en page des pages de projet */
 .contenu-projet {
     display: grid;
+    flex: 1;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     gap: clamp(12px, 2vw, 24px);
 }
@@ -317,7 +325,7 @@ footer {
 }
 
 .contenu-projet .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(8px, 1.2vw, 16px);
     width: 100%;
     margin: 0;
@@ -326,6 +334,7 @@ footer {
 
 .contenu-projet .grid > img {
     min-width: 0;
+    width: 100%;
 }
 
 .footer {

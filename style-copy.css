@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Syne Local";
-    src: url("typo/syne.woff2") format("woff2");
+    font-family: "Syne";
+    src: url("fonts/Syne-Regular.woff2?v=2") format("woff2");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -54,7 +54,7 @@ p {
 }
 
 h1 {
-    font-family: "Syne Local", system-ui, sans-serif;
+    font-family: "Syne", system-ui, sans-serif;
     color: blue;
     font-size: 35px;
 
